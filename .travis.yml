@@ -1,0 +1,19 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t diaconescu/fission-webui -f Dockerfile.dev .
+
+script:
+  - docker run diaconescu/fission-webui yarn lint 
+
+after_success:
+  - docker images
+
+deploy:
+  provider: script
+  script: bash deploy
+  on:
+    branch: master
