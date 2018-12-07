@@ -26,6 +26,7 @@ func main() {
 	}
 	http.Handle("/", changeHeaderThenServe(http.FileServer(http.Dir("static/"))))
 	http.HandleFunc("/about/", handlerIndex)
+	http.HandleFunc("/api-node/", handlerIndex)
 
 	log.Println("Listening on port 3000...")
 
