@@ -31,8 +31,8 @@ export default {
       axios.get('/nodeapi/rand')
         .then(function (response) {
           if(response && response.data) {
-            self.number = repsonse.data.random;
-            self.hostname = repsonse.data.hostname;
+            self.number = response.data.random;
+            self.hostname = response.data.hostname;
           }
         })
         .catch(function (error) {
