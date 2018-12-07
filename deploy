@@ -1,7 +1,5 @@
 #!/bin/bash
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-export REPO=diaconescu/fission-webui
-export TAG=latest
 docker build -f Dockerfile -t $REPO:$COMMIT .
 docker tag $REPO:$COMMIT $REPO:$TAG
 docker push $REPO

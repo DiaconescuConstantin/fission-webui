@@ -3,15 +3,18 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t fission-webui-test -f Dockerfile.dev .
-
-script:
-  - docker run fission-webui-test yarn lint 
-
 env:
   global:
     - COMMIT=${TRAVIS_COMMIT::6}
+    - REPOTEST=fission-webui-test
+    - REPO=diaconescu/fission-webui
+    - TAG=latest
+
+before_install:
+  - docker build -t $REPOTEST -f Dockerfile.dev .
+
+script:
+  - docker run $REPOTEST yarn lint 
 
 after_success:
   - docker images
