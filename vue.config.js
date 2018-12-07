@@ -1,6 +1,6 @@
 module.exports = {
   pwa: {
-    name: 'fission-web-ui'
+    name: 'fission-web-ui',
   },
 
   baseUrl: undefined,
@@ -9,5 +9,5 @@ module.exports = {
   runtimeCompiler: undefined,
   productionSourceMap: false,
   parallel: undefined,
-  css: undefined
-}
+  css: undefined,
+};
