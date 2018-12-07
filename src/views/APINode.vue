@@ -29,17 +29,17 @@ export default {
       self.number = 0;
 
       axios.get('/nodeapi/rand')
-        .then(function (response) {
+        .then((response) => {
           if(response && response.data) {
             self.number = response.data.random;
             self.hostname = response.data.hostname;
           }
         })
-        .catch(function (error) {
+        .catch((error) => {
           self.error = error;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 
